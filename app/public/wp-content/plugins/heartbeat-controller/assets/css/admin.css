@@ -1,0 +1,50 @@
+tr {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #fff;
+    width: 600px;
+    border-radius: 11px;
+    margin-bottom: 20px;
+}
+.form-table th {
+    padding: 20px 10px 0px 0;
+}
+.form-table td {
+    padding: 15px 0px;
+}
+
+.hccwh-heartbeat-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.hccwh-heartbeat-group label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hccwh-heartbeat-group input[type="radio"] {
+  transform: scale(1.1);
+}
+
+.hccwh-frequency-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hccwh-frequency-field input[type="number"] {
+  width: 80px;
+  padding: 5px 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

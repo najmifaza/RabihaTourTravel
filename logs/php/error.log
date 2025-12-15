@@ -1,0 +1,1628 @@
+[05-Oct-2025 07:53:37 UTC] PHP Warning:  Undefined array key "template" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-addon\admin\bsf-core\index.php on line 320
+[05-Oct-2025 08:06:31 UTC] PHP Warning:  Undefined array key "name" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\woocommerce\includes\class-wc-install.php on line 990
+[05-Oct-2025 08:06:31 UTC] PHP Warning:  Undefined array key "title" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\woocommerce\includes\class-wc-install.php on line 992
+[05-Oct-2025 08:06:31 UTC] PHP Warning:  Undefined array key "name" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\woocommerce\includes\class-wc-install.php on line 990
+[05-Oct-2025 08:06:31 UTC] PHP Warning:  Undefined array key "title" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\woocommerce\includes\class-wc-install.php on line 992
+[05-Oct-2025 08:06:42 UTC] WordPress database error Table 'wp_wc_orders' already exists for query 
+CREATE TABLE wp_wc_orders (
+	id bigint(20) unsigned,
+	status varchar(20) null,
+	currency varchar(10) null,
+	type varchar(20) null,
+	tax_amount decimal(26,8) null,
+	total_amount decimal(26,8) null,
+	customer_id bigint(20) unsigned null,
+	billing_email varchar(320) null,
+	date_created_gmt datetime null,
+	date_updated_gmt datetime null,
+	parent_order_id bigint(20) unsigned null,
+	payment_method varchar(100) null,
+	payment_method_title text null,
+	transaction_id varchar(100) null,
+	ip_address varchar(100) null,
+	user_agent text null,
+	customer_note text null,
+	PRIMARY KEY (id),
+	KEY status (status),
+	KEY date_created (date_created_gmt),
+	KEY customer_id_billing_email (customer_id, billing_email(171)),
+	KEY billing_email (billing_email(191)),
+	KEY type_status_date (type, status, date_created_gmt),
+	KEY parent_order_id (parent_order_id),
+	KEY date_updated (date_updated_gmt)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci made by do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::newly_installed, do_action('woocommerce_newly_installed'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::maybe_enable_hpos, Automattic\WooCommerce\Internal\Features\FeaturesController->change_feature_enable, update_option, apply_filters('pre_update_option'), WP_Hook->apply_filters, Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController->process_pre_update_option, Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer->create_database_tables, Automattic\WooCommerce\Internal\Utilities\DatabaseUtil->dbdelta, dbDelta
+[05-Oct-2025 08:06:42 UTC] WordPress database error Table 'wp_wc_order_addresses' already exists for query 
+CREATE TABLE wp_wc_order_addresses (
+	id bigint(20) unsigned auto_increment primary key,
+	order_id bigint(20) unsigned NOT NULL,
+	address_type varchar(20) null,
+	first_name text null,
+	last_name text null,
+	company text null,
+	address_1 text null,
+	address_2 text null,
+	city text null,
+	state text null,
+	postcode text null,
+	country text null,
+	email varchar(320) null,
+	phone varchar(100) null,
+	KEY order_id (order_id),
+	UNIQUE KEY address_type_order_id (address_type, order_id),
+	KEY email (email(191)),
+	KEY phone (phone)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci made by do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::newly_installed, do_action('woocommerce_newly_installed'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::maybe_enable_hpos, Automattic\WooCommerce\Internal\Features\FeaturesController->change_feature_enable, update_option, apply_filters('pre_update_option'), WP_Hook->apply_filters, Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController->process_pre_update_option, Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer->create_database_tables, Automattic\WooCommerce\Internal\Utilities\DatabaseUtil->dbdelta, dbDelta
+[05-Oct-2025 08:06:42 UTC] WordPress database error Table 'wp_wc_order_operational_data' already exists for query 
+CREATE TABLE wp_wc_order_operational_data (
+	id bigint(20) unsigned auto_increment primary key,
+	order_id bigint(20) unsigned NULL,
+	created_via varchar(100) NULL,
+	woocommerce_version varchar(20) NULL,
+	prices_include_tax tinyint(1) NULL,
+	coupon_usages_are_counted tinyint(1) NULL,
+	download_permission_granted tinyint(1) NULL,
+	cart_hash varchar(100) NULL,
+	new_order_email_sent tinyint(1) NULL,
+	order_key varchar(100) NULL,
+	order_stock_reduced tinyint(1) NULL,
+	date_paid_gmt datetime NULL,
+	date_completed_gmt datetime NULL,
+	shipping_tax_amount decimal(26,8) NULL,
+	shipping_total_amount decimal(26,8) NULL,
+	discount_tax_amount decimal(26,8) NULL,
+	discount_total_amount decimal(26,8) NULL,
+	recorded_sales tinyint(1) NULL,
+	UNIQUE KEY order_id (order_id),
+	KEY order_key (order_key)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci made by do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::newly_installed, do_action('woocommerce_newly_installed'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::maybe_enable_hpos, Automattic\WooCommerce\Internal\Features\FeaturesController->change_feature_enable, update_option, apply_filters('pre_update_option'), WP_Hook->apply_filters, Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController->process_pre_update_option, Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer->create_database_tables, Automattic\WooCommerce\Internal\Utilities\DatabaseUtil->dbdelta, dbDelta
+[05-Oct-2025 08:06:42 UTC] WordPress database error Table 'wp_wc_orders_meta' already exists for query 
+CREATE TABLE wp_wc_orders_meta (
+	id bigint(20) unsigned auto_increment primary key,
+	order_id bigint(20) unsigned null,
+	meta_key varchar(255),
+	meta_value text null,
+	KEY meta_key_value (meta_key(100), meta_value(82)),
+	KEY order_id_meta_key_meta_value (order_id, meta_key(100), meta_value(82))
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_520_ci made by do_action('admin_init'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::newly_installed, do_action('woocommerce_newly_installed'), WP_Hook->do_action, WP_Hook->apply_filters, WC_Install::maybe_enable_hpos, Automattic\WooCommerce\Internal\Features\FeaturesController->change_feature_enable, update_option, apply_filters('pre_update_option'), WP_Hook->apply_filters, Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController->process_pre_update_option, Automattic\WooCommerce\Internal\DataStores\Orders\DataSynchronizer->create_database_tables, Automattic\WooCommerce\Internal\Utilities\DatabaseUtil->dbdelta, dbDelta
+[05-Oct-2025 10:57:28 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[05-Oct-2025 10:57:41 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[05-Oct-2025 10:57:46 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[05-Oct-2025 11:26:06 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Undefined array key "id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 41
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Undefined array key "id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 41
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 12:04:48 UTC] PHP Warning:  Trying to access array offset on value of type bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\managers\image.php on line 113
+[05-Oct-2025 23:29:08 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[05-Oct-2025 23:32:29 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[06-Oct-2025 05:45:47 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 05:45:51 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 05:46:20 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 08:27:29 UTC] PHP Warning:  Undefined variable $rss_items in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\dashboard-widgets.php on line 117
+[06-Oct-2025 08:27:29 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\dashboard-widgets.php on line 117
+[06-Oct-2025 08:27:38 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 08:28:15 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 08:29:05 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 08:29:18 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 11:59:28 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 12:02:28 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:02:28 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:02:28 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:02:28 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:02:29 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:49 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:49 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:49 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:49 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:50 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:54 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:54 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:54 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:54 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:06:54 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 12:08:06 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[06-Oct-2025 13:10:53 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:19:11 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\theme-builder\classes\conditions-manager.php on line 181
+[06-Oct-2025 13:19:11 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[06-Oct-2025 13:23:07 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:27:14 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:27:29 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:27:37 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:27:52 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:31:20 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\theme-builder\classes\conditions-manager.php on line 181
+[06-Oct-2025 13:31:20 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[06-Oct-2025 13:39:58 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 13:39:58 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 13:39:58 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 13:39:58 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 13:39:58 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 13:42:28 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:42:40 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:47:41 UTC] PHP Warning:  Undefined variable $rss_items in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\dashboard-widgets.php on line 117
+[06-Oct-2025 13:47:41 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\dashboard-widgets.php on line 117
+[06-Oct-2025 13:48:08 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:48:23 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_customer_otp_codes] => Created table wp_latepoint_customer_otp_codes
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_recurrences] => Created table wp_latepoint_recurrences
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_steps] => Created table wp_latepoint_steps
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_carts] => Created table wp_latepoint_carts
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_cart_items] => Created table wp_latepoint_cart_items
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_orders] => Created table wp_latepoint_orders
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_order_items] => Created table wp_latepoint_order_items
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_order_intents] => Created table wp_latepoint_order_intents
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_order_invoices] => Created table wp_latepoint_order_invoices
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_payment_requests] => Created table wp_latepoint_payment_requests
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_process_jobs] => Created table wp_latepoint_process_jobs
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_sessions] => Created table wp_latepoint_sessions
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_bookings] => Created table wp_latepoint_bookings
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_blocked_periods] => Created table wp_latepoint_blocked_periods
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_cart_meta] => Created table wp_latepoint_cart_meta
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_order_meta] => Created table wp_latepoint_order_meta
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_booking_meta] => Created table wp_latepoint_booking_meta
+)
+
+[06-Oct-2025 13:52:08 UTC] Array
+(
+    [wp_latepoint_processes] => Created table wp_latepoint_processes
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_service_meta] => Created table wp_latepoint_service_meta
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_customer_meta] => Created table wp_latepoint_customer_meta
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_agent_meta] => Created table wp_latepoint_agent_meta
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_bundle_meta] => Created table wp_latepoint_bundle_meta
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_settings] => Created table wp_latepoint_settings
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_locations] => Created table wp_latepoint_locations
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_location_categories] => Created table wp_latepoint_location_categories
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_bundles] => Created table wp_latepoint_bundles
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_bundles_services] => Created table wp_latepoint_bundles_services
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_services] => Created table wp_latepoint_services
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_agents] => Created table wp_latepoint_agents
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_step_settings] => Created table wp_latepoint_step_settings
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_customers] => Created table wp_latepoint_customers
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_service_categories] => Created table wp_latepoint_service_categories
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_custom_prices] => Created table wp_latepoint_custom_prices
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_work_periods] => Created table wp_latepoint_work_periods
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_agents_services] => Created table wp_latepoint_agents_services
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_activities] => Created table wp_latepoint_activities
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_transaction_intents] => Created table wp_latepoint_transaction_intents
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_transactions] => Created table wp_latepoint_transactions
+)
+
+[06-Oct-2025 13:52:09 UTC] Array
+(
+    [wp_latepoint_transaction_refunds] => Created table wp_latepoint_transaction_refunds
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+    [wp_latepoint_customer_otp_codes.otp_hash] => Changed type of wp_latepoint_customer_otp_codes.otp_hash from varchar(255) to VARCHAR(255)
+    [wp_latepoint_customer_otp_codes.used_at] => Changed type of wp_latepoint_customer_otp_codes.used_at from datetime to DATETIME
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+    [wp_latepoint_steps.use_custom_image] => Changed type of wp_latepoint_steps.use_custom_image from tinyint(1) to boolean
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+    [wp_latepoint_services.is_price_variable] => Changed type of wp_latepoint_services.is_price_variable from tinyint(1) to boolean
+    [wp_latepoint_services.is_deposit_required] => Changed type of wp_latepoint_services.is_deposit_required from tinyint(1) to boolean
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+    [wp_latepoint_agents.custom_hours] => Changed type of wp_latepoint_agents.custom_hours from tinyint(1) to boolean
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+    [wp_latepoint_customers.is_guest] => Changed type of wp_latepoint_customers.is_guest from tinyint(1) to boolean
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+    [wp_latepoint_custom_prices.is_price_variable] => Changed type of wp_latepoint_custom_prices.is_price_variable from tinyint(1) to boolean
+    [wp_latepoint_custom_prices.is_deposit_required] => Changed type of wp_latepoint_custom_prices.is_deposit_required from tinyint(1) to boolean
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+    [wp_latepoint_agents_services.is_custom_hours] => Changed type of wp_latepoint_agents_services.is_custom_hours from tinyint(1) to BOOLEAN
+    [wp_latepoint_agents_services.is_custom_price] => Changed type of wp_latepoint_agents_services.is_custom_price from tinyint(1) to BOOLEAN
+    [wp_latepoint_agents_services.is_custom_duration] => Changed type of wp_latepoint_agents_services.is_custom_duration from tinyint(1) to BOOLEAN
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:10 UTC] Array
+(
+)
+
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Batch Process Started!
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.0.0 - astra_addon_background_updater_4_0_0
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.1.0 - astra_addon_background_updater_4_1_0
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.1.6 - astra_addon_background_updater_4_1_6
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.4.0 - astra_addon_background_updater_4_4_0
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.6.0 - astra_addon_background_updater_4_6_0
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.6.1 - astra_addon_background_updater_4_6_1
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.6.8 - astra_addon_background_updater_4_6_8
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.7.0 - astra_addon_background_updater_4_7_0
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.8.4 - astra_addon_background_updater_4_8_4
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.9.2 - astra_addon_background_updater_4_9_2
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.10.0 - astra_addon_background_updater_4_10_0
+[06-Oct-2025 13:52:33 UTC] Astra Addon: Queuing 4.11.3 - astra_addon_background_updater_4_11_3
+[06-Oct-2025 13:53:00 UTC] Astra Addon: Batch Process Started!
+[06-Oct-2025 13:53:00 UTC] Astra Addon: Running migration without batch processing.
+[06-Oct-2025 13:53:00 UTC] Astra Addon: DB version updated!
+[06-Oct-2025 13:53:48 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\theme-builder\classes\conditions-manager.php on line 181
+[06-Oct-2025 13:53:48 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[06-Oct-2025 14:04:16 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:04:35 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:12:29 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:12:35 UTC] PHP Fatal error:  Uncaught Error: Call to a member function get_settings() on bool in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\extensions\scroll-to-top.php:245
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\extensions\scroll-to-top.php(33): Happy_Addons\Elementor\Extensions\Scroll_To_Top->elementor_get_setting('ha_scroll_to_to...')
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Happy_Addons\Elementor\Extensions\Scroll_To_Top->scroll_to_top_controls(Object(ElementorPro\Modules\GlobalWidget\Documents\Widget))
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\document.php(781): do_action('elementor/docum...', Object(ElementorPro\Modules\GlobalWidget\Documents\Widget))
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(2435): Elementor\Core\Base\Document->register_controls()
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(570): Elementor\Controls_Stack->init_controls()
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(315): Elementor\Controls_Stack->get_stack()
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\settings\page\model.php(176): Elementor\Controls_Stack->get_controls()
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(2435): Elementor\Core\Settings\Page\Model->register_controls()
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(570): Elementor\Controls_Stack->init_controls()
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(315): Elementor\Controls_Stack->get_stack()
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(2524): Elementor\Controls_Stack->get_controls()
+#13 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\base\controls-stack.php(1161): Elementor\Controls_Stack->sanitize_settings(Array)
+#14 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\template-library\sources\local.php(667): Elementor\Controls_Stack->get_data('settings')
+#15 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\template-library\sources\local.php(475): Elementor\TemplateLibrary\Source_Local->get_item(1483)
+#16 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\global-widget\module.php(55): Elementor\TemplateLibrary\Source_Local->get_items(Array)
+#17 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): ElementorPro\Modules\GlobalWidget\Module->add_templates_localize_data(Array)
+#18 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#19 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\core\editor\editor.php(80): apply_filters('elementor_pro/e...', Array)
+#20 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\base-object.php(143): ElementorPro\Core\Editor\Editor->get_init_settings()
+#21 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\base-object.php(40): Elementor\Core\Base\Base_Object->ensure_settings()
+#22 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\app.php(36): Elementor\Core\Base\Base_Object->get_settings()
+#23 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\core\editor\editor.php(112): Elementor\Core\Base\App->print_config('elementor-pro')
+#24 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): ElementorPro\Core\Editor\Editor->enqueue_editor_scripts('')
+#25 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#26 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#27 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\editor\editor.php(350): do_action('elementor/edito...')
+#28 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Core\Editor\Editor->enqueue_scripts('')
+#29 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#30 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#31 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\script-loader.php(2299): do_action('wp_enqueue_scri...')
+#32 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): wp_enqueue_scripts('')
+#33 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#34 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#35 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\general-template.php(3192): do_action('wp_head')
+#36 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\editor-templates\editor-wrapper.php(35): wp_head()
+#37 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\editor\loader\v2\editor-v2-loader.php(218): include('C:\\Users\\LEGION...')
+#38 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\editor\editor.php(160): Elementor\Core\Editor\Loader\V2\Editor_V2_Loader->print_root_template()
+#39 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Core\Editor\Editor->init('')
+#40 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters('', Array)
+#41 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#42 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-admin\admin.php(420): do_action('admin_action_el...')
+#43 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-admin\post.php(12): require_once('C:\\Users\\LEGION...')
+#44 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\extensions\scroll-to-top.php on line 245
+[06-Oct-2025 14:12:39 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:12:48 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:12:59 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:19:05 UTC] PHP Warning:  Undefined array key "data" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\onboarding\classes\class-astra-sites-onboarding-setup.php on line 108
+[06-Oct-2025 14:23:09 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:23:10 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[06-Oct-2025 14:29:10 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\theme-builder\classes\conditions-manager.php on line 181
+[06-Oct-2025 14:29:10 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[06-Oct-2025 14:52:16 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:16 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:16 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:16 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:17 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:26 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:26 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:26 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:26 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:52:26 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[06-Oct-2025 14:58:09 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\theme-builder\classes\conditions-manager.php on line 181
+[06-Oct-2025 14:58:09 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[06-Oct-2025 16:03:17 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\theme-builder\classes\conditions-manager.php on line 181
+[07-Oct-2025 01:01:33 UTC] PHP Fatal error:  Maximum execution time of 300 seconds exceeded in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\Requests\src\Transport\Curl.php on line 205
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 04:37:05 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 06:50:02 UTC] PHP Warning:  Undefined array key 1 in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\astra-sites\inc\lib\zipwp-images\classes\zipwp-images-api.php on line 471
+[07-Oct-2025 07:06:25 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor-pro\modules\theme-builder\classes\conditions-manager.php on line 181
+[07-Oct-2025 07:06:25 UTC] PHP Warning:  Undefined array key "editor_post_id" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\history\revisions-manager.php on line 363
+[07-Oct-2025 07:20:41 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 07:20:41 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 07:20:42 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 07:20:42 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 07:20:42 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 07:34:29 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[07-Oct-2025 07:35:32 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[07-Oct-2025 08:57:38 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 08:57:39 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 08:57:39 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 08:57:39 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[07-Oct-2025 08:57:39 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[10-Oct-2025 13:46:56 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[11-Oct-2025 22:49:49 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[11-Oct-2025 23:01:48 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[11-Oct-2025 23:01:49 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[11-Oct-2025 23:01:51 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[11-Oct-2025 23:01:52 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(324): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(517): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(727): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[12-Oct-2025 03:29:06 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[17-Oct-2025 10:58:21 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[14-Dec-2025 08:57:59 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[14-Dec-2025 08:59:18 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[14-Dec-2025 09:12:04 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[14-Dec-2025 09:12:06 UTC] PHP Warning:  Undefined array key "post_type" in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\happy-elementor-addons\classes\theme-builder.php on line 184
+[14-Dec-2025 09:16:58 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:16:58 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:16:59 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:16:59 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:16:59 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:18:39 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:18:39 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:18:39 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:18:40 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:18:40 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:43:28 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:43:29 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:43:29 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:43:38 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
+[14-Dec-2025 09:43:38 UTC] PHP Fatal error:  Uncaught WpOrg\Requests\Exception\Http\Status403: 403 Forbidden in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php:190
+Stack trace:
+#0 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php(53): Elementor\Modules\CloudLibrary\Module->is_screenshot_proxy_mode(Array)
+#1 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\base\module.php(86): Elementor\Modules\CloudLibrary\Module->__construct()
+#2 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\core\modules-manager.php(64): Elementor\Core\Base\Module::instance()
+#3 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(709): Elementor\Core\Modules_Manager->__construct()
+#4 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\includes\plugin.php(627): Elementor\Plugin->init_components()
+#5 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(341): Elementor\Plugin->init('')
+#6 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\class-wp-hook.php(365): WP_Hook->apply_filters(NULL, Array)
+#7 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-includes\plugin.php(522): WP_Hook->do_action(Array)
+#8 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-settings.php(742): do_action('init')
+#9 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-config.php(103): require_once('C:\\Users\\LEGION...')
+#10 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-load.php(50): require_once('C:\\Users\\LEGION...')
+#11 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-blog-header.php(13): require_once('C:\\Users\\LEGION...')
+#12 C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\index.php(17): require('C:\\Users\\LEGION...')
+#13 {main}
+  thrown in C:\Users\LEGION S7\Local Sites\rabihatour1\app\public\wp-content\plugins\elementor\modules\cloud-library\module.php on line 190
