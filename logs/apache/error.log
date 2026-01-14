@@ -1,0 +1,177 @@
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:21:23.272241 2025] [core:error] [pid 7956:tid 996] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:21:23.274230 2025] [core:error] [pid 7956:tid 996] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:21:25.324575 2025] [core:error] [pid 24236:tid 912] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:21:25.325566 2025] [core:error] [pid 24236:tid 912] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:21:27.167467 2025] [core:error] [pid 27032:tid 944] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:21:27.168475 2025] [core:error] [pid 27032:tid 944] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:21:28.980278 2025] [core:error] [pid 6108:tid 772] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:21:28.982294 2025] [core:error] [pid 6108:tid 772] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:22:03.825030 2025] [core:error] [pid 17420:tid 780] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:22:03.827050 2025] [core:error] [pid 17420:tid 780] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:22:05.891454 2025] [core:error] [pid 15980:tid 936] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:22:05.893952 2025] [core:error] [pid 15980:tid 936] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:22:07.491474 2025] [core:error] [pid 17812:tid 916] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:22:07.492464 2025] [core:error] [pid 17812:tid 916] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:22:09.124409 2025] [core:error] [pid 28256:tid 908] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:22:09.125919 2025] [core:error] [pid 28256:tid 908] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:23:25.641266 2025] [core:error] [pid 24728:tid 912] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:23:25.642264 2025] [core:error] [pid 24728:tid 912] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:23:27.348408 2025] [core:error] [pid 28080:tid 896] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:23:27.349405 2025] [core:error] [pid 28080:tid 896] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:23:28.952873 2025] [core:error] [pid 23016:tid 908] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:23:28.953874 2025] [core:error] [pid 23016:tid 908] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:23:31.883602 2025] [core:error] [pid 5484:tid 920] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:23:31.885607 2025] [core:error] [pid 5484:tid 920] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:23:33.609094 2025] [core:error] [pid 6408:tid 756] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:23:33.610095 2025] [core:error] [pid 6408:tid 756] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:23:35.177639 2025] [core:error] [pid 26716:tid 840] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:23:35.178640 2025] [core:error] [pid 26716:tid 840] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:23:36.593056 2025] [core:error] [pid 10504:tid 936] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:23:36.594069 2025] [core:error] [pid 10504:tid 936] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:24:45.041619 2025] [core:error] [pid 19596:tid 980] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:24:45.042621 2025] [core:error] [pid 19596:tid 980] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:24:46.911541 2025] [core:error] [pid 3268:tid 900] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:24:46.912541 2025] [core:error] [pid 3268:tid 900] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:24:48.496882 2025] [core:error] [pid 1652:tid 948] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:24:48.497882 2025] [core:error] [pid 1652:tid 948] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:24:50.110998 2025] [core:error] [pid 20492:tid 956] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:24:50.112000 2025] [core:error] [pid 20492:tid 956] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:25:37.787388 2025] [core:error] [pid 28304:tid 888] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:25:37.789384 2025] [core:error] [pid 28304:tid 888] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:25:39.453994 2025] [core:error] [pid 8460:tid 976] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:25:39.455993 2025] [core:error] [pid 8460:tid 976] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:25:41.016495 2025] [core:error] [pid 17444:tid 944] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:25:41.017496 2025] [core:error] [pid 17444:tid 944] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:25:42.801606 2025] [core:error] [pid 2120:tid 924] (OS 3)The system cannot find the path specified.  : AH00099: could not create C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+[Sun Dec 21 20:25:42.803613 2025] [core:error] [pid 2120:tid 924] AH00100: httpd.exe: could not log pid to file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:29:46.049576 2025] [mpm_winnt:notice] [pid 10572:tid 968] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Sun Dec 21 20:29:46.051573 2025] [mpm_winnt:notice] [pid 10572:tid 968] AH00456: Server built: Apr 21 2020 13:46:54
+[Sun Dec 21 20:29:46.051573 2025] [core:notice] [pid 10572:tid 968] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Sun Dec 21 20:29:46.061575 2025] [mpm_winnt:notice] [pid 10572:tid 968] AH00418: Parent: Created child process 22624
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:29:47.119575 2025] [mpm_winnt:notice] [pid 22624:tid 956] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:31:48.637652 2025] [core:warn] [pid 27072:tid 952] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sun Dec 21 20:31:48.642652 2025] [mpm_winnt:notice] [pid 27072:tid 952] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Sun Dec 21 20:31:48.642652 2025] [mpm_winnt:notice] [pid 27072:tid 952] AH00456: Server built: Apr 21 2020 13:46:54
+[Sun Dec 21 20:31:48.642652 2025] [core:notice] [pid 27072:tid 952] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Sun Dec 21 20:31:48.655653 2025] [mpm_winnt:notice] [pid 27072:tid 952] AH00418: Parent: Created child process 6272
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sun Dec 21 20:31:49.951324 2025] [mpm_winnt:notice] [pid 6272:tid 980] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 22 05:01:08.096083 2025] [core:warn] [pid 9508:tid 908] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 22 05:01:08.099082 2025] [mpm_winnt:notice] [pid 9508:tid 908] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Mon Dec 22 05:01:08.099082 2025] [mpm_winnt:notice] [pid 9508:tid 908] AH00456: Server built: Apr 21 2020 13:46:54
+[Mon Dec 22 05:01:08.099082 2025] [core:notice] [pid 9508:tid 908] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Mon Dec 22 05:01:08.107083 2025] [mpm_winnt:notice] [pid 9508:tid 908] AH00418: Parent: Created child process 25108
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 22 05:01:08.734082 2025] [mpm_winnt:notice] [pid 25108:tid 12] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 22 11:01:28.750031 2025] [core:warn] [pid 29764:tid 936] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 22 11:01:28.753033 2025] [mpm_winnt:notice] [pid 29764:tid 936] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Mon Dec 22 11:01:28.753033 2025] [mpm_winnt:notice] [pid 29764:tid 936] AH00456: Server built: Apr 21 2020 13:46:54
+[Mon Dec 22 11:01:28.753033 2025] [core:notice] [pid 29764:tid 936] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Mon Dec 22 11:01:28.760033 2025] [mpm_winnt:notice] [pid 29764:tid 936] AH00418: Parent: Created child process 35724
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 22 11:01:29.654446 2025] [mpm_winnt:notice] [pid 35724:tid 1068] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 22 11:01:38.478562 2025] [core:warn] [pid 11056:tid 864] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Dec 22 11:01:38.483562 2025] [mpm_winnt:notice] [pid 11056:tid 864] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Mon Dec 22 11:01:38.483562 2025] [mpm_winnt:notice] [pid 11056:tid 864] AH00456: Server built: Apr 21 2020 13:46:54
+[Mon Dec 22 11:01:38.484562 2025] [core:notice] [pid 11056:tid 864] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Mon Dec 22 11:01:38.494562 2025] [mpm_winnt:notice] [pid 11056:tid 864] AH00418: Parent: Created child process 30760
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Mon Dec 22 11:01:39.314816 2025] [mpm_winnt:notice] [pid 30760:tid 12] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Thu Dec 25 06:19:46.007349 2025] [core:warn] [pid 4312:tid 748] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Dec 25 06:19:46.010350 2025] [mpm_winnt:notice] [pid 4312:tid 748] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Thu Dec 25 06:19:46.010350 2025] [mpm_winnt:notice] [pid 4312:tid 748] AH00456: Server built: Apr 21 2020 13:46:54
+[Thu Dec 25 06:19:46.010350 2025] [core:notice] [pid 4312:tid 748] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Thu Dec 25 06:19:46.017351 2025] [mpm_winnt:notice] [pid 4312:tid 748] AH00418: Parent: Created child process 18492
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Thu Dec 25 06:19:46.593921 2025] [mpm_winnt:notice] [pid 18492:tid 984] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Thu Dec 25 07:46:34.869427 2025] [core:warn] [pid 13888:tid 912] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Dec 25 07:46:34.873425 2025] [mpm_winnt:notice] [pid 13888:tid 912] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Thu Dec 25 07:46:34.873425 2025] [mpm_winnt:notice] [pid 13888:tid 912] AH00456: Server built: Apr 21 2020 13:46:54
+[Thu Dec 25 07:46:34.873425 2025] [core:notice] [pid 13888:tid 912] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Thu Dec 25 07:46:34.881426 2025] [mpm_winnt:notice] [pid 13888:tid 912] AH00418: Parent: Created child process 32352
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Thu Dec 25 07:46:35.716426 2025] [mpm_winnt:notice] [pid 32352:tid 1020] AH00354: Child: Starting 64 worker threads.
+[Thu Dec 25 21:20:59.075109 2025] [fcgid:warn] [pid 32352:tid 980] mod_fcgid: cleanup zombie process 32384
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sat Jan 03 22:12:51.028825 2026] [core:warn] [pid 37012:tid 948] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Sat Jan 03 22:12:51.035819 2026] [mpm_winnt:notice] [pid 37012:tid 948] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Sat Jan 03 22:12:51.035819 2026] [mpm_winnt:notice] [pid 37012:tid 948] AH00456: Server built: Apr 21 2020 13:46:54
+[Sat Jan 03 22:12:51.035819 2026] [core:notice] [pid 37012:tid 948] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Sat Jan 03 22:12:51.049820 2026] [mpm_winnt:notice] [pid 37012:tid 948] AH00418: Parent: Created child process 41364
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Sat Jan 03 22:12:52.191416 2026] [mpm_winnt:notice] [pid 41364:tid 1016] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Tue Jan 06 16:14:30.395751 2026] [core:warn] [pid 16208:tid 924] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Jan 06 16:14:30.398750 2026] [mpm_winnt:notice] [pid 16208:tid 924] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Tue Jan 06 16:14:30.398750 2026] [mpm_winnt:notice] [pid 16208:tid 924] AH00456: Server built: Apr 21 2020 13:46:54
+[Tue Jan 06 16:14:30.398750 2026] [core:notice] [pid 16208:tid 924] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Tue Jan 06 16:14:30.404794 2026] [mpm_winnt:notice] [pid 16208:tid 924] AH00418: Parent: Created child process 10052
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Tue Jan 06 16:14:31.022169 2026] [mpm_winnt:notice] [pid 10052:tid 1000] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Tue Jan 06 16:23:38.422889 2026] [core:warn] [pid 31044:tid 952] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Tue Jan 06 16:23:38.425273 2026] [mpm_winnt:notice] [pid 31044:tid 952] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Tue Jan 06 16:23:38.425273 2026] [mpm_winnt:notice] [pid 31044:tid 952] AH00456: Server built: Apr 21 2020 13:46:54
+[Tue Jan 06 16:23:38.425273 2026] [core:notice] [pid 31044:tid 952] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Tue Jan 06 16:23:38.433272 2026] [mpm_winnt:notice] [pid 31044:tid 952] AH00418: Parent: Created child process 16680
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Tue Jan 06 16:23:39.096114 2026] [mpm_winnt:notice] [pid 16680:tid 1000] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 07 10:12:42.197473 2026] [core:warn] [pid 24972:tid 768] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Jan 07 10:12:42.201469 2026] [mpm_winnt:notice] [pid 24972:tid 768] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Wed Jan 07 10:12:42.201469 2026] [mpm_winnt:notice] [pid 24972:tid 768] AH00456: Server built: Apr 21 2020 13:46:54
+[Wed Jan 07 10:12:42.201469 2026] [core:notice] [pid 24972:tid 768] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Wed Jan 07 10:12:42.209468 2026] [mpm_winnt:notice] [pid 24972:tid 768] AH00418: Parent: Created child process 32240
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 07 10:12:42.972443 2026] [mpm_winnt:notice] [pid 32240:tid 1020] AH00354: Child: Starting 64 worker threads.
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 07 10:16:38.967729 2026] [core:warn] [pid 26628:tid 788] AH00098: pid file C:/Users/LEGION S7/AppData/Roaming/Local/run/RHijytjDG/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Jan 07 10:16:38.970729 2026] [mpm_winnt:notice] [pid 26628:tid 788] AH00455: Apache/2.4.43 (Win32) mod_fcgid/2.3.9a configured -- resuming normal operations
+[Wed Jan 07 10:16:38.970729 2026] [mpm_winnt:notice] [pid 26628:tid 788] AH00456: Server built: Apr 21 2020 13:46:54
+[Wed Jan 07 10:16:38.970729 2026] [core:notice] [pid 26628:tid 788] AH00094: Command line: 'C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\lightning-services\\apache-2.4.43+11\\bin\\win32\\bin\\httpd.exe -d C:/Users/LEGION S7/AppData/Roaming/Local/lightning-services/apache-2.4.43+11/bin/win32 -D FOREGROUND -f C:\\Users\\LEGION S7\\AppData\\Roaming\\Local\\run\\RHijytjDG\\conf\\apache\\apache2.conf'
+[Wed Jan 07 10:16:38.978731 2026] [mpm_winnt:notice] [pid 26628:tid 788] AH00418: Parent: Created child process 25432
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd.exe: Could not reliably determine the server's fully qualified domain name, using fe80::83e9:50c:f2d2:f63a. Set the 'ServerName' directive globally to suppress this message
+[Wed Jan 07 10:16:39.714781 2026] [mpm_winnt:notice] [pid 25432:tid 960] AH00354: Child: Starting 64 worker threads.
